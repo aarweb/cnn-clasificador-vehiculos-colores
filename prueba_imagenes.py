@@ -4,6 +4,7 @@ import numpy as np
 import os
 
 CARPETA_PRUEBAS = "./muestras"
+ARCHIVO_RESULTADOS = "resultados.txt"
 UMBRAL_CERTEZA = 0.80
 TAMAÑO_IMAGEN_COLORES = 64
 TAMAÑO_IMAGEN_VEHICULOS = 128
@@ -62,6 +63,7 @@ for nombre_archivo in os.listdir(CARPETA_PRUEBAS):
     if certeza_color >= UMBRAL_CERTEZA:
         resultado += f" de color {color}"
 
-    print(
-        f"{nombre_archivo}:\n{resultado}\n (Certeza vehículo: {certeza_vehiculo:.4f}, Certeza color: {certeza_color:.4f})\n"
-    )
+    linea = f"{nombre_archivo};{certeza_vehiculo:.4f};{vehiculo};{certeza_color:.4f};{color};{resultado}\n"
+    with open(ARCHIVO_RESULTADOS, "a") as f:
+        f.write(linea)
+    print(f"{nombre_archivo}: {resultado}")
