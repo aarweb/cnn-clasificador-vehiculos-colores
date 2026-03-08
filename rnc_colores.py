@@ -82,10 +82,8 @@ with open(RESULTADOS_ENTRENAMIENTO, "w") as archivo_resultados:
         )
 
         loss, accuracy = modelo.evaluate(test_dataset, verbose=0)
-        linea_resultado = (
-            f"[{modelo.name}] Precision: {accuracy:.4f} | Perdida: {loss:.4f} \n"
-        )
-        print(linea_resultado)
+        linea_resultado = f"{modelo.name};{accuracy:.4f};{loss:.4f}\n"
+        print(f"{modelo.name} - Precision: {accuracy:.4f} | Perdida: {loss:.4f}")
         archivo_resultados.write(linea_resultado)
 
         if accuracy > mejor_acurracy or (
