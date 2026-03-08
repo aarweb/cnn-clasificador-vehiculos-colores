@@ -1,0 +1,5 @@
+__pycache__/
+*.h5
+imagenes_practica_vehiculos_colores/
+muestras/
+zips/

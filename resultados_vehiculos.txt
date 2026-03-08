@@ -1,0 +1,4 @@
+[modelo_1] Precision: 0.9750 | Perdida: 0.1528 
+[modelo_2] Precision: 0.6625 | Perdida: 0.5788 
+[modelo_3] Precision: 0.8750 | Perdida: 0.3249 
+[modelo_4] Precision: 1.0000 | Perdida: 0.0168 
